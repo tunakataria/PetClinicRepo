@@ -1,6 +1,10 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+###Custom
+*.releaseBackup
+.DS_STORE
+*/target/*
 ### STS ###
 .apt_generated
 .classpath
