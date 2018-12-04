@@ -4,11 +4,7 @@ import com.spring.petclinic.petclinicdemo.model.Pet;
 
 import java.util.Set;
 
-public interface PetService {
+public interface PetService extends CrudService<Pet, Long> {
 
-    Pet findByOwnerId();
-
-    Set<Pet> finAll();
-
-    void delete();
+    Pet findByOwnerId(Long ID);
 }

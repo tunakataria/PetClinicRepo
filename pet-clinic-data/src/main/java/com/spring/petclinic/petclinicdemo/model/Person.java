@@ -2,6 +2,8 @@ package com.spring.petclinic.petclinicdemo.model;
 
 public class Person {
 
+    private Long Id;
+
     private String firstName;
 
     private String lastName;
@@ -22,6 +24,11 @@ public class Person {
         this.lastName = lastName;
     }
 
+    public Long getId() {
+        return Id;
+    }
 
-
+    public void setId(Long id) {
+        Id = id;
+    }
 }
