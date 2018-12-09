@@ -2,10 +2,13 @@ package com.spring.petclinic.petclinicdemo.service.Map;
 
 import com.spring.petclinic.petclinicdemo.model.Vet;
 import com.spring.petclinic.petclinicdemo.service.CrudService;
+import com.spring.petclinic.petclinicdemo.service.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class VetMapService extends AbstractMapBasedService<Vet, Long> implements CrudService<Vet,Long>{
+@Service
+public class VetMapService extends AbstractMapBasedService<Vet, Long> implements VetService {
     @Override
     public Vet save(Vet object) {
         return super.save(object.getId(),object);
@@ -24,6 +27,11 @@ public class VetMapService extends AbstractMapBasedService<Vet, Long> implements
     @Override
     public Vet findById(Long aLong) {
         return super.findById(aLong);
+    }
+
+    @Override
+    public Vet findByLastName(String lastName) {
+        return super.findAll().stream().filter(vet -> vet.getLastName().equals(lastName)).findFirst().get();
     }
 
     @Override
