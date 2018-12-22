@@ -10,8 +10,8 @@ import java.util.Set;
 @Service
 public class VetMapService extends AbstractMapBasedService<Vet, Long> implements VetService {
     @Override
-    public Vet save(Vet object) {
-        return super.save(object.getId(),object);
+    public Long save(Vet object) {
+        return super.save(object);
     }
 
     @Override

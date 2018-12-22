@@ -1,6 +1,6 @@
 package com.spring.petclinic.petclinicdemo.model;
 
-public class Person {
+public class Person extends BaseEntity{
 
     private Long Id;
 

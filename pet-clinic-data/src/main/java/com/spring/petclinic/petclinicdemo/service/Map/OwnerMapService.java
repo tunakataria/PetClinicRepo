@@ -13,9 +13,10 @@ public class OwnerMapService extends AbstractMapBasedService<Owner, Long> implem
         return super.findAll().stream().filter(owner -> owner.getLastName().equals(lastName)).findFirst().get();
     }
 
+
     @Override
-    public Owner save(Owner object) {
-        return super.save(object.getId(), object);
+    public Long save(Owner object) {
+        return super.save(object);
     }
 
     @Override

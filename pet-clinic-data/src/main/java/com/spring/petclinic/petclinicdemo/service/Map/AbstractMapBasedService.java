@@ -1,13 +1,12 @@
 package com.spring.petclinic.petclinicdemo.service.Map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import com.spring.petclinic.petclinicdemo.model.BaseEntity;
 
-public abstract class AbstractMapBasedService<T, ID> {
+import java.util.*;
 
-    public Map<ID, T> map = new HashMap();
+public abstract class AbstractMapBasedService<T extends BaseEntity, ID extends  Long> {
+
+    public Map<Long, T> map = new HashMap();
 
 
     public Set<T> findAll() {
@@ -22,9 +21,20 @@ public abstract class AbstractMapBasedService<T, ID> {
         return map.get(id);
     }
 
-    public T save(ID id,T object) {
+    public Long save(T object) {
+        Long id = getNextID();
+        object.setId(id);
         map.put(id, object);
-        return object;
+        return id;
+    }
+
+    private Long getNextID(){
+        if (map.keySet().size()!=0) {
+            return Collections.max(map.keySet())+1;
+        }else {
+            return 1L;
+        }
+
     }
 
     public  void delete(ID object){
