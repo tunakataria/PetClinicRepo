@@ -1,5 +1,6 @@
 package com.spring.petclinic.petclinicdemo.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Owner extends Person{
@@ -8,7 +9,7 @@ public class Owner extends Person{
 
     String telephone;
 
-    Set<Pet> pets ;
+    Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {
         return address;

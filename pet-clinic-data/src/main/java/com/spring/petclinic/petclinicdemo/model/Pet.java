@@ -2,11 +2,12 @@ package com.spring.petclinic.petclinicdemo.model;
 
 import java.time.LocalDate;
 
-public class Pet extends BaseEntity{
+public class Pet extends BaseEntity {
 
     private PetType petType;
     private Owner owner;
-    private LocalDate localDate;
+    private LocalDate birthDate;
+    private String name;
 
     public PetType getPetType() {
         return petType;
@@ -16,8 +17,8 @@ public class Pet extends BaseEntity{
         return owner;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
     public void setPetType(PetType petType) {
@@ -28,7 +29,11 @@ public class Pet extends BaseEntity{
         this.owner = owner;
     }
 
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
