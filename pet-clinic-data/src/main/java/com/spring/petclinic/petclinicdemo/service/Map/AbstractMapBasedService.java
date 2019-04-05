@@ -21,11 +21,11 @@ public abstract class AbstractMapBasedService<T extends BaseEntity, ID extends  
         return map.get(id);
     }
 
-    public Long save(T object) {
+    public T save(T object) {
         Long id = getNextID();
         object.setId(id);
         map.put(id, object);
-        return id;
+        return object;
     }
 
     private Long getNextID(){

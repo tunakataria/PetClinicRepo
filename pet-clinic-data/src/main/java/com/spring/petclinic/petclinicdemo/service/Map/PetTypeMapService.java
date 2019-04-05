@@ -2,9 +2,11 @@ package com.spring.petclinic.petclinicdemo.service.Map;
 
 import com.spring.petclinic.petclinicdemo.model.PetType;
 import com.spring.petclinic.petclinicdemo.service.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetTypeMapService extends AbstractMapBasedService<PetType,Long> implements PetTypeService {
 
     @Override
@@ -23,7 +25,7 @@ public class PetTypeMapService extends AbstractMapBasedService<PetType,Long> imp
     }
 
     @Override
-    public Long save(PetType object) {
+    public PetType save(PetType object) {
         return super.save(object);
     }
 

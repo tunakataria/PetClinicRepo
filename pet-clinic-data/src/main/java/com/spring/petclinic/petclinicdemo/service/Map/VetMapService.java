@@ -10,7 +10,7 @@ import java.util.Set;
 @Service
 public class VetMapService extends AbstractMapBasedService<Vet, Long> implements VetService {
     @Override
-    public Long save(Vet object) {
+    public Vet save(Vet object) {
         return super.save(object);
     }
 
@@ -33,7 +33,6 @@ public class VetMapService extends AbstractMapBasedService<Vet, Long> implements
     public Vet findByLastName(String lastName) {
         return super.findAll().stream().filter(vet -> vet.getLastName().equals(lastName)).findFirst().get();
     }
-
     @Override
     public void delete(Long object) {
         super.delete(object);
