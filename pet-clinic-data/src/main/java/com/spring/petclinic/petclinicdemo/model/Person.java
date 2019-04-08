@@ -1,12 +1,17 @@
 package com.spring.petclinic.petclinicdemo.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class Person extends BaseEntity{
 
-    private Long Id;
-
+    @Column(name="first_name")
     private String firstName;
 
+    @Column(name="last_name")
     private String lastName;
+
 
     public String getFirstName() {
         return firstName;
@@ -24,11 +29,4 @@ public class Person extends BaseEntity{
         this.lastName = lastName;
     }
 
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
 }

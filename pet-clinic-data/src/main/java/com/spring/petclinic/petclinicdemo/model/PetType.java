@@ -1,7 +1,13 @@
 package com.spring.petclinic.petclinicdemo.model;
 
-public class PetType extends BaseEntity {
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
+@Entity
+@Table(name="pet_types")
+public class PetType extends BaseEntity {
+    @Column(name="pet_type")
     String petType;
 
     public String getPetType() {
